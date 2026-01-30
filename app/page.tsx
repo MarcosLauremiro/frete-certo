@@ -1,65 +1,78 @@
 import Image from "next/image";
+import bgTop from "../public/bg-top.png"
+import bgBottom from "../public/bg-bottom.png"
+import logo from "../public/LOGO.png"
+import { TriangleAlert } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <div className="">
+      <main className="">
+        <section className="h-full w-full flex flex-col items-center justify-center pt-6 lg:pt-16">
+          <div className="flex justify-center items-center z-10 mb-8 lg:mb-16">
+            <Image src={logo} alt="logo" className="w-40 lg:w-80" />
+          </div>
+          <div className="h-full w-full text-center flex flex-row justify-center items-center mb-4 lg:mb-10">
+            <h1 className="text-[21px] w-[700] leading-[21px] lg:text-[48px] lg:leading-[48px]">A maioria acha que tá no lucro até ver o que o simulador revela em poucos minutos.</h1>
+          </div>
+          <span className="flex 8px text-center items-center justify-center gap-[3.5px] px-[10.5px] py-[5.25px] lg:gap-[8px] border border-[#FF781C] rounded-full bg-[#FF781C]/15 backdrop-blur-lg mb-4 lg:mb-10 lg:px-[24px] lg:py-[12px]">
+            <TriangleAlert className="w-3 lg:w-5" color="#FF781C" />
+            <p className="text-[#FF781C] text-[7px] lg:text-[16px]">Essa aula expira em breve</p>
+          </span>
+
+          <video className="w-[343px] h-[193px] lg:w-[784px] lg:h-[441px] rounded-[8.75px] lg:rounded-[20px]" width="343" height="193" controls preload="none">
+            <source src="https://www.youtube.com/watch?v=mTb8ko1reHQ" type="video/mp4" />
+            <track
+              src="https://www.youtube.com/watch?v=mTb8ko1reHQ"
+              kind="subtitles"
+              srcLang="pt"
+              label="Portuguese"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            Your browser does not support the video tag.
+          </video>
+          <div className="max-w-[475px] text-center flex flex-col items-center justify-center">
+            <button
+              className="
+                p-[14px]
+                flex items-center justify-center gap-[3.5px]
+                rounded-full
+                border border-[#FF781C]
+                bg-[linear-gradient(90deg,_#FF8430_0%,_#BE4D00_100%)]
+                text-white
+                uppercase
+                text-[12px]
+                font-bold
+                leading-[12px]
+                mb-2
+                lg:mb-4
+                lg:p-[32px]
+                lg:text-[24px]
+                lg:leading-[24px]
+              "
+            >
+              Acessar simulador agora
+            </button>
+            <span className="w-full max-w-[208px] text-[10px] lg:text-[16px] lg:max-w-[475px]">Apenas 2% dos caminhoneiros têm controle total dos seus ganhos.</span>
+          </div>
+        </section>
+        <section className="w-full ">
+          <div>
+            <h1>
+              O seu lucro não tá no frete mais caro, tá no Frete Certo.
+            </h1>
+            <p>A maioria acha que tá no lucro até ver o que o simulador revela em poucos minutos.</p>
+          </div>
+        </section>
       </main>
     </div>
   );
 }
+
+// display: flex;
+// padding: 14px;
+// justify-content: center;
+// align-items: center;
+// gap: 3.5px;
+// border-radius: 437.063px;
+// border: 0.875px solid #FF781C;
+// background: linear-gradient(90deg, #FF8430 0%, #BE4D00 100%);
