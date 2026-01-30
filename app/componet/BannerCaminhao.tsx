@@ -24,11 +24,11 @@ export const BannerCaminhao = () => {
 
                 {/* Gradiente superior - mobile */}
                 <div className="pointer-events-none absolute top-0 left-0 w-full h-32
-              bg-[linear-gradient(180deg,#121212_0%,rgba(18,18,18,0)_100%)] lg:hidden" />
+              bg-[linear-gradient(180deg,#121212_0%,rgba(18,18,18,0)_100%)]" />
 
                 {/* Gradiente inferior - mobile */}
                 <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32
-              bg-[linear-gradient(0deg,#121212_0%,rgba(18,18,18,0)_100%)] lg:hidden" />
+              bg-[linear-gradient(0deg,#121212_0%,rgba(0,0,0,0)_100%)]" />
             </div>
         </section>
     )

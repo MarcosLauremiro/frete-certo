@@ -49,7 +49,7 @@ export const Hero = () => {
 
             {/* CTA Section */}
             <div className="w-full max-w-[475px] text-center flex flex-col items-center justify-center gap-4">
-                <GlowButton />
+                <GlowButton>Acessar simulador agora</GlowButton>
                 <p className="text-[10px] lg:text-base text-gray-300 max-w-[208px] lg:max-w-full">
                     Apenas 2% dos caminhoneiros têm controle total dos seus ganhos.
                 </p>

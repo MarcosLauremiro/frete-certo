@@ -1,8 +1,12 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, ReactNode } from 'react';
 
-export default function GlowButton() {
+interface GlowButtonProps {
+  children: ReactNode;
+}
+
+export default function GlowButton({ children }: GlowButtonProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -93,7 +97,7 @@ export default function GlowButton() {
       />
 
       <span className="relative z-10">
-        Acessar simulador agora
+        {children}
       </span>
     </button>
   );
