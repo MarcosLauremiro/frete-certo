@@ -5,7 +5,9 @@ import { Hero } from "./componet/Hero";
 import { BannerCaminhao } from "./componet/BannerCaminhao";
 import bombagasolina from "../public/Bombagasolina.png"
 import GlowButton from "./componet/Button";
-import { CircleCheckBig, CircleX } from "lucide-react";
+import { CircleCheckBig, CircleX, Plus } from "lucide-react";
+import foto from "../public/Foto Hebert.png"
+import FAQ from "./componet/Faq";
 
 export default function Home() {
   return (
@@ -34,6 +36,8 @@ export default function Home() {
       <main className="relative z-10">
         <Hero />
         <BannerCaminhao />
+
+        {/* bomba de combustivel.*/}
         <section className="flex flex-col justify-center items-center px-4 w-full lg:relative lg:h-[600px] lg:overflow-hidden">
           {/* Imagem - desktop com sombra laranja - MOVIDA PARA CIMA */}
           <div className="hidden lg:block lg:absolute lg:left-[10%] lg:top-1/2 lg:-translate-y-1/2 lg:z-0">
@@ -64,6 +68,8 @@ export default function Home() {
             alt="imagem de uma bomba de gasolina e algumas moedas"
           />
         </section>
+
+        {/*pequena sessão laranja*/}
         <section className="bg-[linear-gradient(90deg,_#FF781C_0%,_#000_62.5%)] px-[30px] py-[20px] mb-12 lg:py-[40px]">
           <div className="max-w-7xl mx-auto flex flex-col gap-6 lg:flex-row lg:items-center">
 
@@ -96,6 +102,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/*testemunhos*/}
         <section className="relative flex flex-col items-center justify-center py-12 overflow-hidden">
           {/* Background image */}
           <Image
@@ -149,6 +156,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/*pros e contras*/}
         <section className="relative flex flex-col items-center justify-center py-16 gap-4 overflow-hidden p-4">
           <div className="relative z-10 flex items-center justify-center">
             <h1 className="text-[22px] leading-[22px] font-bold mb-[10px] lg:text-[48px] lg:leading-[48px] lg:mb-[20px] lg:max-w-[840px] text-center">Você tá cuidando do seu negócio ou só rodando pra pagar as contas?</h1>
@@ -353,7 +361,66 @@ export default function Home() {
           </div>
         </section>
 
+        {/** sobre */}
+        <section className="flex flex-col gap-6 p-4 lg:flex-row py-16 lg:items-center lg:gap-12 lg:px-16">
+          {/* Imagem */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <Image
+              src={foto}
+              alt="foto herbet"
+              className="rounded-2xl object-cover max-w-[360px] lg:max-w-full"
+            />
+          </div>
+
+          {/* Texto */}
+          <div className="w-full lg:w-1/2 flex flex-col gap-4">
+            <h1 className="text-[22px] leading-[26px] font-bold text-center lg:text-left lg:text-[46px] lg:leading-[48px]">
+              <span className="text-[#FF781C]">Quem criou o simulador</span> já viveu
+              exatamente o que você vive hoje.
+            </h1>
+
+            <div className="flex flex-col gap-4 text-[#E0E0E0]">
+              <p className="text-[12px] leading-[16px] lg:text-[16px] lg:leading-[24px]">
+                Assumi a Lag Express no início dos anos 2000. A operação rodava,
+                faturava e entregava, mas sem clareza: não sabíamos se havia lucro
+                ou apenas contas em dia.
+              </p>
+
+              <p className="text-[12px] leading-[16px] lg:text-[16px] lg:leading-[24px]">
+                Percebi que o problema não era mercado ou concorrência, e sim a
+                falta de visão do custo real. Ao analisar cada número, a empresa
+                ganhou previsibilidade e cresceu de verdade.
+              </p>
+
+              <p className="text-[12px] leading-[16px] lg:text-[16px] lg:leading-[24px]">
+                Anos depois, foi adquirida por uma multinacional, com aprovação do
+                Cade. Ficou claro: o que trava o transporte não é falta de trabalho,
+                é falta de clareza.
+              </p>
+
+              <p className="text-[12px] leading-[16px] lg:text-[16px] lg:leading-[24px] font-medium">
+                Por isso criei o Simulador Frete Certo, para mostrar, sem achismo,
+                se a operação dá lucro ou prejuízo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/**duvidas */}   
+        <FAQ/>
+        
+        {/**call to action last */}
+        <section className="flex flex-col items-center justify-center gap-1 mb-5 text-center lg:mt-20 lg:gap-4 lg:mb-18">
+          <h1 className="text-[21px] font-semibold leading-[28px] max-w-[230px] lg:max-w-[550px] lg:text-[48px] lg:leading-[56px] text-center">Tirou suas dúvidas?</h1>
+          <p className="text-[8px] text-gray-300 max-w-[208px] lg:text-base lg:max-w-[560px]">Então vem dar o primeiro passo rumo à vida que você merece.</p>
+          <GlowButton>Acessar simulador agora</GlowButton>
+        </section>
       </main>
+      
+      <footer className="w-full border-t border-gray-600 flex justify-between items-center p-4">
+        <h1 className="font-light text-[6px] lg:text-[14px]">Frete Certo 2025 © Todos os direitos reservados</h1>
+        <h1 className="font-light text-[6px] lg:text-[14px]">Site feito com carinho por @vini.omoreira</h1>
+      </footer>
     </div>
   );
 }
