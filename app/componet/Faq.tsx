@@ -51,7 +51,7 @@ export default function FAQ() {
           return (
             <div
               key={index}
-              className="bg-[#202020] border border-[#545454] rounded-lg px-5 py-4 cursor-pointer transition"
+              className="bg-[#202020]  border border-[#545454] rounded-lg px-5 py-4 cursor-pointer transition"
               onClick={() => toggle(index)}
             >
               <div className="flex justify-between items-center gap-4">
@@ -60,9 +60,9 @@ export default function FAQ() {
                 </h2>
 
                 {isOpen ? (
-                  <Minus size={20} color="#FF781C" />
+                  <Minus className="w-3 h-3 lg:w-6 lg:h-6 shrink-0 text-[#FF781C]" />
                 ) : (
-                  <Plus size={20} color="#FF781C" />
+                  <Plus className="w-3 h-3 lg:w-6 lg:h-6 shrink-0 text-[#FF781C]" />
                 )}
               </div>
 
