@@ -10,6 +10,40 @@ import caminhaobg from "../public/caminhaobg.png";
 import logo from "../public/LOGO.png";
 
 export default function Home() {
+
+  const testemunhos = [
+    {
+      id: 1,
+      url: "https://drive.google.com/file/d/14IzBLTLaLESvmjVDkNWlBsj8F7INHVE_/preview",
+      alt: "testemunho aliexpress",
+    },
+    {
+      id: 2,
+      url: "https://drive.google.com/file/d/14WJb1Htczx6J57gcAybEDS2GsBThN1xr/preview",
+      alt: "testemunho 1",
+    },
+    {
+      id: 3,
+      url: "https://drive.google.com/file/d/1JQQ1iqzIrWdiouhTIodSLfPr2J6OlO-k/preview",
+      alt: "testemunho 2",
+    },
+    {
+      id: 4,
+      url: "https://drive.google.com/file/d/1N0hFFYHZTRHtLuWHHRLpuolYQUDQGQMv/preview",
+      alt: "testemunho 3",
+    },
+    {
+      id: 5,
+      url: "https://drive.google.com/file/d/1TQTU8h5P5psft7_x4r9lBqEFc6m--CnJ/preview",
+      alt: "testemunho 4",
+    },
+    {
+      id: 6,
+      url: "https://drive.google.com/file/d/1qAcbevKlj0SlM46XVRC-o_3YQBmWYGxC/preview",
+      alt: "testemunho 5",
+    },
+  ];
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Background decorativo superior */}
@@ -110,10 +144,10 @@ export default function Home() {
             />
 
             {/* Gradiente superior - mobile */}
-            <div className="pointer-events-none absolute top-0 left-0 w-full h-32 bg-[linear-gradient(180deg,#121212_0%,black_10%,rgba(18,18,18,0)_100%)] lg:hidden" />
+            <div className="pointer-events-none absolute top-0 left-0 w-full h-32 bg-[linear-gradient(180deg,#121212_0%,black_10%,rgba(18,18,18,0)_100%)]" />
 
             {/* Gradiente inferior - mobile */}
-            <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-[linear-gradient(0deg,#121212_0%,black_10%,rgba(0,0,0,0)_100%)] lg:hidden" />
+            <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-[linear-gradient(0deg,#121212_0%,black_10%,rgba(0,0,0,0)_100%)]" />
           </div>
         </section>
 
@@ -133,7 +167,7 @@ export default function Home() {
 
           {/* Texto */}
           <div className="text-center mb-8 lg:text-left lg:absolute lg:right-[10%] lg:top-1/2 lg:-translate-y-1/2 lg:z-10 lg:max-w-[490px] lg:mb-0">
-            <h2 className="text-3xl leading-tight mb-4 lg:text-5xl lg:mb-6">
+            <h2 className="text-[24px] leading-tight mb-4 lg:text-5xl lg:mb-6">
               Diesel e manutenção não são seus únicos gastos. Existem em média{" "}
               <span className="font-bold">
                 12 custos invisíveis que{" "}
@@ -200,18 +234,21 @@ export default function Home() {
             </h2>
 
             <div className="w-full flex justify-center">
-              <div className="w-full overflow-x-auto lg:max-w-[1300px]">
-                <div className="flex gap-6 px-4 snap-x snap-mandatory lg:px-0 lg:justify-center">
-                  {[1, 2, 3, 4].map((item) => (
-                    <video
-                      key={item}
-                      className="snap-center flex-shrink-0 w-[220px] aspect-[9/16] rounded-xl bg-black sm:w-[240px] lg:w-[300px] lg:rounded-[20px]"
-                      controls
-                      preload="none"
+              <div className="w-full lg:max-w-[1300px]">
+                <div className="flex gap-6 px-4 overflow-x-auto snap-x snap-mandatory scroll-smooth lg:px-0">
+                  {testemunhos.map((item) => (
+                    <div
+                      key={item.id}
+                      className="snap-center flex-shrink-0 w-[220px] aspect-[9/16] rounded-xl bg-black overflow-hidden sm:w-[240px] lg:w-[300px] lg:rounded-[20px]"
                     >
-                      <source src="/video.mp4" type="video/mp4" />
-                      Seu navegador não suporta a tag de vídeo.
-                    </video>
+                      <iframe
+                        src={item.url}
+                        className="w-full h-full scale-[1.15]"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                        title={item.alt}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
@@ -396,12 +433,15 @@ export default function Home() {
         {/* Sobre o criador */}
         <section className="flex flex-col gap-8 p-4 py-16 lg:flex-row lg:items-center lg:gap-12 lg:px-16">
           {/* Imagem */}
-          <div className="w-full flex justify-center lg:w-1/2">
+          <div className="relative w-full flex justify-center lg:w-1/2">
             <Image
               src={foto}
               alt="Foto de Hebert, criador do Frete Certo"
               className="rounded-2xl object-cover max-w-[360px] lg:max-w-full"
             />
+
+            {/* Esfumaçado */}
+            <div className="pointer-events-none absolute bottom-0 left-0 w-full h-1/3 rounded-2xl bg-gradient-to-t from-black/100 to-transparent" />
           </div>
 
           {/* Texto */}

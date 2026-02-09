@@ -44,7 +44,7 @@ export default function FAQ() {
         Perguntas Frequentes
       </h1>
 
-      <div className="w-full max-w-6xl flex flex-col gap-3">
+      <div className="w-full max-w-7xl flex flex-col gap-3">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
 
