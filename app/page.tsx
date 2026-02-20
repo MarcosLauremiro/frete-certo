@@ -97,20 +97,14 @@ export default function Home() {
           </div>
 
           {/* Vídeo principal */}
-          <video
+          <iframe
             className="w-full max-w-[343px] h-auto aspect-video rounded-lg mb-8 lg:max-w-[784px] lg:rounded-[20px]"
-            controls
-            preload="none"
-          >
-            <source src="https://www.youtube.com/watch?v=mTb8ko1reHQ" type="video/mp4" />
-            <track
-              src="/path-to-subtitles.vtt"
-              kind="subtitles"
-              srcLang="pt"
-              label="Português"
-            />
-            Seu navegador não suporta a tag de vídeo.
-          </video>
+            src="https://www.youtube.com/embed/K-EniDyjFHQ"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
 
           {/* CTA Section */}
           <div className="w-full max-w-[475px] text-center flex flex-col items-center justify-center gap-4">
