@@ -279,7 +279,7 @@ export default function Home() {
             <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch">
               {/* QUEM USA O FRETE CERTO */}
               <div className="flex flex-col gap-6 p-6">
-                <h3 className="font-bold text-center leading-tight text-[28px] lg:text-3xl">
+                <h3 className="font-extrabold text-center leading-tight text-[28px] lg:text-3xl">
                   QUEM USA O<br />
                   <span className="text-[#FF781C] font-black">FRETE CERTO</span>
                 </h3>
@@ -355,7 +355,7 @@ export default function Home() {
 
               {/* QUEM NÃO USA */}
               <div className="flex flex-col gap-6 p-6">
-                <h3 className="font-bold text-center leading-tight text-[28px] lg:text-3xl">
+                <h3 className="font-extrabold text-center leading-tight text-[28px] lg:text-3xl">
                   QUEM<br />
                   NÃO USA
                 </h3>
