@@ -14,35 +14,35 @@ export default function Home() {
   const testemunhos = [
     {
       id: 1,
-      url: "https://drive.google.com/file/d/14IzBLTLaLESvmjVDkNWlBsj8F7INHVE_/preview",
-      alt: "testemunho aliexpress",
+      url: "https://www.youtube.com/shorts/RhvoRGm3nA4",
+      alt: "testemunho 0",
     },
     {
       id: 2,
-      url: "https://drive.google.com/file/d/14WJb1Htczx6J57gcAybEDS2GsBThN1xr/preview",
+      url: "https://www.youtube.com/shorts/fTB0AJSWwcI",
       alt: "testemunho 1",
     },
     {
       id: 3,
-      url: "https://drive.google.com/file/d/1JQQ1iqzIrWdiouhTIodSLfPr2J6OlO-k/preview",
+      url: "https://www.youtube.com/shorts/lPV7u2KR85M",
       alt: "testemunho 2",
     },
     {
       id: 4,
-      url: "https://drive.google.com/file/d/1N0hFFYHZTRHtLuWHHRLpuolYQUDQGQMv/preview",
+      url: "https://www.youtube.com/shorts/x82sCNzBY3s",
       alt: "testemunho 3",
     },
     {
       id: 5,
-      url: "https://drive.google.com/file/d/1TQTU8h5P5psft7_x4r9lBqEFc6m--CnJ/preview",
+      url: "https://www.youtube.com/shorts/rwIoxca8dCA",
       alt: "testemunho 4",
     },
-    {
-      id: 6,
-      url: "https://drive.google.com/file/d/1qAcbevKlj0SlM46XVRC-o_3YQBmWYGxC/preview",
-      alt: "testemunho 5",
-    },
   ];
+
+  const getEmbedUrl = (url: string) => {
+  const videoId = url.split('/').pop();
+  return `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3`;
+};
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
@@ -98,8 +98,9 @@ export default function Home() {
 
           {/* Vídeo principal */}
           <iframe
+            id="yt-player"
             className="w-full max-w-[343px] h-auto aspect-video rounded-lg mb-8 lg:max-w-[784px] lg:rounded-[20px]"
-            src="https://www.youtube.com/embed/K-EniDyjFHQ"
+            src="https://www.youtube.com/embed/K-EniDyjFHQ?autoplay=1&mute=1&controls=0&enablejsapi=1"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -227,27 +228,31 @@ export default function Home() {
               Veja o que quem já usa o simulador tem a dizer.
             </h2>
 
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center py-4">
               <div className="w-full lg:max-w-[1300px]">
-                <div className="flex gap-6 px-4 overflow-x-auto snap-x snap-mandatory scroll-smooth lg:px-0">
+                {/* Adicionamos touch-pan-x para melhor deslize no mobile */}
+                <div className="flex gap-4 px-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar touch-pan-x">
                   {testemunhos.map((item) => (
                     <div
                       key={item.id}
-                      className="snap-center flex-shrink-0 w-[220px] aspect-[9/16] rounded-xl bg-black overflow-hidden sm:w-[240px] lg:w-[300px] lg:rounded-[20px]"
+                      className="snap-center flex-shrink-0 w-[260px] aspect-[9/16] rounded-3xl bg-black overflow-hidden relative shadow-2xl border border-white/10"
                     >
-                      <iframe
-                        src={item.url}
-                        className="w-full h-full scale-[1.15]"
-                        allow="autoplay; fullscreen"
-                        allowFullScreen
-                        title={item.alt}
-                      />
+                      {/* Container interno que garante que o player do YT ocupe tudo sem bordas */}
+                      <div className="absolute inset-0 w-full h-full pointer-events-auto">
+                        <iframe
+                          // Usamos a URL de "embed" correta do YouTube
+                          src={getEmbedUrl(item.url)}
+                          className="absolute top-0 left-0 w-full h-full border-0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          title={item.alt}
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-
             <div className="mt-12">
               <GlowButton>Acessar simulador agora</GlowButton>
             </div>

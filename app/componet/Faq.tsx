@@ -67,7 +67,7 @@ export default function FAQ() {
               </div>
 
               {isOpen && (
-                <p className="mt-3 text-[12px] text-[#808080] lg:text-[18px]">
+                <p className="mt-3 text-[12px] text-[#c4c4c4] lg:text-[18px]">
                   {faq.content}
                 </p>
               )}

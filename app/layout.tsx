@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo } from 'next/font/google';
 import "./globals.css";
+import Script from "next/script";
+
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -26,6 +28,53 @@ export default function RootLayout({
         className={`${archivo.variable} ${archivo.className} antialiased`}
       >
         {children}
+        <Script id="kiwify-tracking" strategy="afterInteractive">
+          {`
+            let prefix = ["https://pay.kiwify.com.br"];
+
+            function getParams() {
+              let t = "";
+              let e = window.top.location.href;
+              let r = new URL(e);
+
+              if (r != null) {
+                let a = r.searchParams.get("utm_source");
+                let n = r.searchParams.get("utm_medium");
+                let o = r.searchParams.get("utm_campaign");
+                let m = r.searchParams.get("utm_term");
+                let c = r.searchParams.get("utm_content");
+
+                if (e.indexOf("?") !== -1) {
+                  t = "&sck=" + [a, n, o, m, c].join("|");
+                }
+
+                console.log(t);
+              }
+
+              return t;
+            }
+
+            (function () {
+              var t = new URLSearchParams(window.location.search);
+
+              if (t.toString()) {
+                document.querySelectorAll("a").forEach(function (e) {
+                  for (let r = 0; r < prefix.length; r++) {
+                    if (e.href.indexOf(prefix[r]) !== -1) {
+                      if (e.href.indexOf("?") === -1) {
+                        e.href += "?" + t.toString() + getParams();
+                      } else {
+                        e.href += "&" + t.toString() + getParams();
+                      }
+                    }
+                  }
+                });
+              }
+            })();
+
+            console.log('%cScript de rastreamento de vendas', 'font-size:20px;color:yellow;');
+          `}
+        </Script>
       </body>
     </html>
   );
