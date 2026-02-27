@@ -72,7 +72,7 @@ export default function Home() {
 
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-8 lg:py-16">
+        <section className="w-full flex flex-col items-center justify-center mt-8 px-4 lg:py-10">
           {/* Logo */}
           <div className="mb-8 lg:mb-12">
             <Image
@@ -110,7 +110,7 @@ export default function Home() {
           {/* CTA Section */}
           <div className="w-full max-w-[475px] text-center flex flex-col items-center justify-center gap-4">
             <GlowButton>Acessar simulador agora</GlowButton>
-            <p className="text-xs text-gray-300 max-w-[208px] lg:text-base lg:max-w-full">
+            <p className="text-xs text-gray-300 max-w-[208px] lg:text-base lg:max-w-full mb-8">
               Apenas 2% dos caminhoneiros têm controle total dos seus ganhos.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function Home() {
               no frete mais caro,<br />
               <span className="text-[#FF781C]">tá no Frete Certo.</span>
             </h2>
-            <p className="text-sm font-normal leading-relaxed max-w-[300px] mx-auto lg:text-base lg:max-w-[400px] lg:mx-0">
+            <p className="text-sm font-normal leading-relaxed max-w-[300px] mb-2 mx-auto lg:text-base lg:max-w-[400px] lg:mx-0">
               A maioria acha que tá no lucro até ver o que o simulador revela em poucos minutos.
             </p>
           </div>
@@ -183,7 +183,7 @@ export default function Home() {
         </section>
 
         {/* Seção laranja de destaque */}
-        <section className="bg-[linear-gradient(90deg,_#FF781C_0%,_#000_62.5%)] px-8 py-8 mb-16 lg:py-12">
+        <section className="bg-[linear-gradient(90deg,_#FF781C_0%,_#000_62.5%)] px-8 py-8 mb-2 lg:py-12">
           <div className="max-w-7xl mx-auto flex flex-col gap-8 lg:flex-row lg:items-center">
             {/* Lado esquerdo */}
             <div className="w-full text-center lg:w-1/2 lg:text-left">
@@ -209,7 +209,7 @@ export default function Home() {
         </section>
 
         {/* Testemunhos */}
-        <section className="relative flex flex-col items-center justify-center py-16 overflow-hidden">
+        <section className="relative flex flex-col items-center justify-center py-12 overflow-hidden">
           {/* Background image */}
           <Image
             src={bgBottom}
@@ -260,7 +260,7 @@ export default function Home() {
         </section>
 
         {/* Comparação: Pros e Contras */}
-        <section className="relative flex flex-col items-center justify-center py-16 gap-6 overflow-hidden px-4">
+        <section className="relative flex flex-col items-center justify-center py-4 gap-6 overflow-hidden px-4">
           {/* Título */}
 
           <div className="relative z-10 flex items-center justify-center">
@@ -430,7 +430,7 @@ export default function Home() {
         </section>
 
         {/* Sobre o criador */}
-        <section className="flex flex-col gap-8 p-4 py-16 lg:flex-row lg:items-center lg:gap-12 lg:px-16">
+        <section className="flex flex-col gap-8 p-4 py-10 lg:flex-row lg:items-center lg:gap-12 lg:px-16">
           {/* Imagem */}
           <div className="relative w-full flex justify-center lg:w-1/2">
             <Image
