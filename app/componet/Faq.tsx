@@ -39,7 +39,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex flex-col items-cestnter justify-center gap-6 p-4">
+    <section className="flex flex-col items-center justify-center gap-6 p-4">
       <h1 className="text-[20px] leading-[22px] font-bold text-center lg:text-left lg:text-[48px] lg:leading-[52px]">
         Perguntas Frequentes
       </h1>

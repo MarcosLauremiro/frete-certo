@@ -56,6 +56,7 @@ export default function GlowButton({ children }: GlowButtonProps) {
         '--mouse-x': `${mousePosition.x}px`,
         '--mouse-y': `${mousePosition.y}px`,
       } as React.CSSProperties}
+      onClick={() => window.open('https://wa.me/message/FCFGIGFBQDBTA1', '_blank')}
     >
       {/* Efeito glow que segue o mouse - com mais blur */}
       <span
@@ -99,6 +100,6 @@ export default function GlowButton({ children }: GlowButtonProps) {
       <span className="relative z-10">
         {children}
       </span>
-    </button>
+    </button >
   );
 }
