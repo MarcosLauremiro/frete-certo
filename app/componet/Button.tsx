@@ -4,9 +4,10 @@ import { useState, useRef, ReactNode } from 'react';
 
 interface GlowButtonProps {
   children: ReactNode;
+  duvida?: boolean;
 }
 
-export default function GlowButton({ children }: GlowButtonProps) {
+export default function GlowButton({ children, duvida }: GlowButtonProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -56,7 +57,12 @@ export default function GlowButton({ children }: GlowButtonProps) {
         '--mouse-x': `${mousePosition.x}px`,
         '--mouse-y': `${mousePosition.y}px`,
       } as React.CSSProperties}
-      onClick={() => window.open('https://wa.me/message/FCFGIGFBQDBTA1', '_blank')}
+      onClick={() => {
+        if (duvida) {
+          window.open('https://wa.me/message/FCFGIGFBQDBTA1', '_blank');
+        }
+        window.open('https://pay.kiwify.com.br/Coz5UTT');
+      }}
     >
       {/* Efeito glow que segue o mouse - com mais blur */}
       <span

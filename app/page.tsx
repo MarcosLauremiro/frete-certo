@@ -480,7 +480,7 @@ export default function Home() {
           <p className="text-xs text-gray-300 max-w-[208px] lg:text-base lg:max-w-[560px]">
             Então vem dar o primeiro passo rumo à vida que você merece.
           </p>
-          <GlowButton>
+          <GlowButton duvida>
             Acessar simulador agora
           </GlowButton>
         </section>
